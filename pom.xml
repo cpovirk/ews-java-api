@@ -105,7 +105,7 @@
         <!--  Dependencies [TEST]:  -->
         <junit.version>4.12</junit.version>
         <hamcrest-all.version>1.3</hamcrest-all.version>
-        <mockito-core.version>1.10.19</mockito-core.version>
+        <mockito-core.version>5.3.0</mockito-core.version>
         <slf4j.version>1.7.12</slf4j.version>
         <logback.version>1.1.3</logback.version>
     </properties>
@@ -370,25 +370,6 @@
                 </executions>
             </plugin>
 
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${jacoco-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
             <!-- Deployment / build plugins END -->
         </plugins>
         <!-- Used to bump all of the various core plugins up to Maven current.

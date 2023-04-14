@@ -51,7 +51,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import javax.xml.stream.XMLStreamException;
-import javax.xml.ws.http.HTTPException;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -403,7 +402,7 @@ public abstract class ServiceRequestBase<T> {
       }
 
       return serviceResponse;
-    } catch (HTTPException e) {
+    } catch (RuntimeException e) {
       if (e.getMessage() != null) {
         this.getService().processHttpResponseHeaders(TraceFlags.EwsResponseHttpHeaders, response);
       }

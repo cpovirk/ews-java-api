@@ -40,7 +40,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-import javax.xml.bind.DatatypeConverter;
 
 /**
  * Represents a change of time for a time zone.
@@ -221,12 +220,12 @@ public final class TimeChange extends ComplexProperty {
       return true;
     } else if (reader.getLocalName().equalsIgnoreCase(
         XmlElementNames.AbsoluteDate)) {
-      Calendar cal = DatatypeConverter.parseDate(reader.readElementValue());
+      Calendar cal = Calendar.getInstance();
       cal.setTimeZone(TimeZone.getTimeZone("UTC"));
       this.absoluteDate = cal.getTime();
       return true;
     } else if (reader.getLocalName().equalsIgnoreCase(XmlElementNames.Time)) {
-      Calendar cal = DatatypeConverter.parseTime(reader.readElementValue());
+      Calendar cal = Calendar.getInstance();
       this.time = new Time(cal.getTime());
       return true;
     } else {
